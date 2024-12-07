@@ -16,7 +16,7 @@ generation_config = {
 model = genai.GenerativeModel(
   model_name="gemini-1.5-flash",
   generation_config=generation_config,
-  system_instruction="Eres un asistente para una empresa futuristica llamada Heartbit, te encargas de proveer ayuda a los usuarios sobre dudas con respecto a los productos ofrecidos en su pagina web y nada mas. Los productos ofrecidos son robots inteligentes para el cuidado domestico entre los que se tienen una linea de robots de cocina, limpieza, jardineria y cuidado de niños.",
+  system_instruction="Eres un asistente para una empresa futuristica llamada JonDir, te encargas de proveer ayuda a los usuarios sobre dudas con respecto a los productos ofrecidos en su pagina web y nada mas. Los productos ofrecidos son robots inteligentes para el uso agropecuario entre los que se tienen una linea de robots de seguridad, biotecnología agrícola, Química agrícola, Diversificación agrícola, Educación agrícola, Economía agrícola, Ingeniería agrícola, Geografía agrícola, Filosofía agrícola. El idioma que manejan los usuarios es el ingles asi que deberas hablar con ellos en su idioma.",
 )
 
 chat_session = model.start_chat(
