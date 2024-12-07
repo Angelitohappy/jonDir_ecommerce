@@ -1,0 +1,244 @@
+/* Colores */
+:root {
+  --bone: #ebe3d2;
+  --dun: #ccbfa3;
+  --sage: #a4ac86;
+  --reseda-green: #737a5d;
+  --ebony: #414833;
+  --button-color: #153d10; /* Color del botón */
+  --white-color: #ffffff; /* Color blanco */
+  --heart: #3b5a38; /* Color del corazón */
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+body {
+  background-color: var(--ebony); /* Fondo oscuro */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.login-container {
+  background-color: var(--white-color); /* Fondo blanco */
+  width: 800px;
+  max-width: 90%;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.login-form,
+.register-section {
+  flex: 1;
+  padding: 90px;
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login-form p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.login-form input:focus {
+  transition: 0.2s;
+  border-color: var(--button-color); /* Borde en foco */
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--button-color); /* Color del botón */
+  color: var(--white-color); /* Color del texto del botón */
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.login-form button:hover {
+  background-color: #333; /* Color en hover */
+}
+
+.register-section img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.register-section p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.register-section a {
+  color: var(--button-color); /* Color del enlace */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-section button {
+  margin-top: 15px;
+  padding: 12px 60px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--button-color); /* Color del botón */
+  color: var(--white-color); /* Color del texto del botón */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-section button:hover {
+  background-color: #333; /* Color en hover */
+}
+
+.signup-container {
+  background-color: var(--white-color); /* Fondo blanco */
+  width: 500px;
+  max-width: 90%;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.signup-form {
+  padding: 50px;
+  text-align: center;
+}
+
+.signup-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.signup-form p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 70%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.signup-form input:focus {
+  border-color: var(--button-color); /* Borde en foco */
+  transition: 0.2s;
+}
+
+.signup-form button {
+  width: 70%;
+  padding: 13px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--button-color); /* Color del botón */
+  color: var(--white-color); /* Color del texto del botón */
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.signup-form button:hover {
+  background-color: #333; /* Color en hover */
+}
+
+.signup-form .error-message,
+.login-form .error-message {
+  color: var(--button-color); /* Color del mensaje de error */
+  font-weight: bold;
+}
+
+.error-message.hidden {
+  display: none;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .login-form,
+  .register-section {
+    padding: 30px;
+  }
+
+  .register-section img {
+    width: 100px;
+  }
+
+  .signup-container {
+    width: 100%;
+  }
+
+  .signup-form {
+    padding: 30px;
+  }
+
+  .signup-form input,
+  .signup-form button {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form h2,
+  .signup-form h2 {
+    font-size: 20px;
+  }
+
+  .login-form p,
+  .signup-form p {
+    font-size: 12px;
+  }
+
+  .login-form input,
+  .signup-form input {
+    font-size: 14px;
+  }
+
+  .login-form button,
+  .signup-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

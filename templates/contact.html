@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>
+        Contact
+    </title>
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="./static/styles/contact.css">
+{% endblock %}
+
+{% block script %}
+    <script src="./static/scripts/contact.js"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="contact-main">
+        <div class="contact-wrapper">
+            <h1>Would you like to get in touch with Jondir?</h1>
+            <div>
+                <div class="email-wrapper">
+                    <h2>
+                        Send us a message!
+                    </h2>
+                    {% if data.sent %}
+                        <p class="success-message">
+                            Your email has been sent successfully.
+                        </p>
+                    {% endif  %}
+                    <form formaction="/contact" method="post" class="contact-form">
+                        {% if data.logged %}
+                            <input id="email" name="email" type="email" placeholder="Your email address" value={{ data.email }}>
+                        {% else %}
+                            <input id="email" name="email" type="email" placeholder="Your email address">
+                        {% endif %}
+                            <p id="email-error" class="error-message hidden">
+                                The email address is not in a valid format.
+                            </p>
+                        <input name="subject" type="text" placeholder="Subject of your message">
+                        <textarea name="body" placeholder="Body of your message"></textarea>
+                        {% if data.email_error %}
+                            <p id="email-error" class="error-message">
+                                Please fill in all fields to send the email.
+                            </p>
+                        {% endif %}
+                        <button id="send-email" type="submit">Send Email.</button>
+                    </form>
+                </div>
+                <div class="social-wrapper">
+                    <h2>
+                        Follow us on social media
+                    </h2>
+                    <div class="social-media">
+                        <a href="#"><img src="static/images/facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="static/images/twitter.png" alt="Twitter"></a>
+                        <a href="#"><img src="static/images/instagram.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

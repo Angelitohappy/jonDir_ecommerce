@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>
+    Sign Up
+</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="./static/styles/login.css">
+{% endblock %}
+
+{% block script %}
+<script src="./static/scripts/sign_up.js"></script>
+{% endblock %}
+
+{% block main %}
+<div class="signup-container">
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <p>Please enter your details to continue.</p>
+        <form method="post">
+            <input id="email-field" type="text" name="email" placeholder="Email" pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+" title="The email must be in a valid format. Example: domain@host.com" required>
+            <p id="email-error" class="error-message hidden">
+                The email address is not in a valid format.
+            </p>
+            {% if data.invalid_email %}
+            <p class="error-message">
+                The entered email address is already taken by another account.
+            </p>
+            {% endif %}
+            <input id="password" type="password" name="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$" title="The password must be at least 8 characters long, with a digit, a lowercase letter, and an uppercase letter." required>
+            <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirm Password" required>
+            <p id="password-error" class="error-message hidden">
+                The passwords do not match.
+            </p>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="date" name="birthdate" placeholder="Birthdate" max="2006-01-01" required>
+            <select name="genre" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="m">Male</option>
+                <option value="j">Female</option>
+                <option value="n">Prefer not to say</option>
+            </select> 
+            <button id="register-button" type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

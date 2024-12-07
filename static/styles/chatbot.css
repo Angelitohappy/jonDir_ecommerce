@@ -1,0 +1,106 @@
+:root {
+  --bone: #ebe3d2;
+  --dun: #ccbfa3;
+  --sage: #a4ac86;
+  --reseda-green: #737a5d;
+  --ebony: #414833;
+  --heart: #3b5a38; /* Color del corazón */
+  --bot-color: #6f849c; /* Color del bot */
+}
+
+body {
+  background-color: var(--ebony); /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.chatbot-wrapper {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.conversation-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 700px;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bone); /* Fondo blanco */
+  border-radius: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#chat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  overflow-y: scroll;
+  height: 65vh;
+  width: 500px;
+  padding: 10px;
+}
+
+.user-message,
+.bot-message {
+  margin-top: auto;
+  flex: 0 0 auto;
+  width: auto;
+  padding: 20px;
+  color: white; /* Color del texto de los mensajes */
+  border-radius: 10px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: var(--heart); /* Color del mensaje del usuario */
+}
+
+.bot-message {
+  background-color: var(--bot-color); /* Color del mensaje del bot */
+}
+
+.message-sending {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.message-sending input,
+.message-sending button {
+  height: 50px;
+  border: solid 2px var(--heart); /* Borde del input y botón */
+}
+
+.message-sending input {
+  padding-left: 10px;
+  width: 400px;
+  padding-right: 10px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.message-sending button {
+  border-left: none;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 100px;
+  padding: 0px 10px;
+  font-weight: bold;
+  background-color: var(--bone); /* Fondo del botón */
+  color: var(--heart); /* Color del texto del botón */
+}
+
+.message-sending button:hover {
+  transition: 0.2s;
+  background-color: var(--heart); /* Fondo del botón en hover */
+  color: white; /* Color del texto en hover */
+}

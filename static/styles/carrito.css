@@ -1,0 +1,136 @@
+:root {
+  --bone: #ebe3d2;
+  --dun: #ccbfa3;
+  --sage: #a4ac86;
+  --reseda-green: #737a5d;
+  --ebony: #414833;
+  --heart: #3b5a38; /* Color del corazón */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--ebony); /* Fondo oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cart-container {
+  background-color: var(--bone); /* Fondo blanco */
+  text-align: center;
+  border-radius: 35px;
+  margin-top: 140px;
+  margin-bottom: 60px;
+  padding: 80px;
+  width: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-container p {
+  padding-top: 50px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--ebony); /* Color del texto */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.cart-item img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 10px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.item-info {
+  flex: 2;
+}
+
+.item-info h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: var(--ebony); /* Color del texto */
+}
+
+.item-info p {
+  margin: 5px 0;
+  color: #555; /* Color gris */
+}
+
+.item-info .price {
+  font-weight: bold;
+  color: var(--heart); /* Color del precio */
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-actions input {
+  width: 60px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.item-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--heart); /* Color del botón */
+  color: var(--bone); /* Color del texto en el botón */
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.item-actions button:hover {
+  background-color: #0f0e0e; /* Color del botón en hover */
+  transition: background-color 0.3s;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc; /* Color de la línea horizontal */
+  margin: 15px 0;
+}
+
+.cart-summary {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.cart-summary h2 {
+  font-size: 1.5em;
+  color: var(--ebony); /* Color del texto */
+}
+
+.cart-summary button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--heart); /* Color del botón */
+  color: var(--bone); /* Color del texto en el botón */
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cart-summary button:hover {
+  background-color: #7f1e35; /* Color del botón en hover */
+  transition: background-color 0.3s;
+}

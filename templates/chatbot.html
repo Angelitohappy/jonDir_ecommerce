@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>
+        Chatbot
+    </title>
+{% endblock %}
+
+{% block script %}
+    <script src="./static/Scripts/chatbot.js"></script>
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="./static/styles/chatbot.css">
+{% endblock %}
+{% block main %}
+
+<div class="chatbot-wrapper">
+    <div class="conversation-wrapper">
+        <div id="chat">
+            <p class="bot-message">Welcome! Through this interface, I can answer all your questions regarding Jondir's services.</p>
+        </div>
+        <div class="message-sending">
+            <input id="user_input" type="text" placeholder="Type your message here...">
+            <button id="send_message">Send</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

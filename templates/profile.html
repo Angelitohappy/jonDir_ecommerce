@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>
+    User Profile
+</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="./static/styles/profile.css">
+{% endblock %}
+
+{% block script %}
+    <script src="./static/scripts/profile.js"></script>
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <img src="static/images/profile.png" alt="Profile Image" class="profile-image">
+        {% if data.modified %}
+            <p class="success-message">
+                Your personal information has been successfully modified.
+            </p>
+        {% elif data.modified_pass %}
+            <p class="success-message">
+                Your password has been successfully modified.
+            </p>
+        {% endif %}
+        <form method="post" action="/profile">
+            <div class="input-group">
+                <label for="nombre">Name</label>
+                <input type="text" id="nombre" name="nombre" value="{{ data.user_data.name }}" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" value="{{ data.user_data.email }}" required>
+            </div>
+            <p id="email-error" class="error-message hidden">
+                The email address is not in a valid format.
+            </p>
+            <div class="input-group">
+                <label for="password">New Password</label>
+                <input type="password" id="new-password" name="new-password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$" title="The password must be at least 8 characters long, with a digit, a lowercase letter, and an uppercase letter.">
+            </div>
+            {% if data.password_error %}
+                <p class="error-message">
+                    Fill in the password fields to modify it.
+                </p>
+            {% endif %}
+            <div class="input-group">
+                <label for="password">Confirm New Password</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+            <p id="password-error" class="error-message hidden">
+                The passwords do not match.
+            </p>
+            <div class="button-group">
+                <button id="reset-password" type="submit" class="reset-password" formaction="/reset-password">Reset Password</button>
+                <button id="save-changes" type="submit" class="save-changes">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}

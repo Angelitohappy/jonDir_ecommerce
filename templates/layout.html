@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block title %}
+    {% endblock %}
+
+    <link rel="stylesheet" href="./static/styles/header.css">
+
+    {% block style %}
+    {% endblock %}
+    {% block script %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <a href="/" class="logo-container">
+            <img src="static/images/LogoRobotAgricultor.svg" alt="HeartBit Logo" class="logo">
+            <h1><span class="heart-color">Jon</span>Dir</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+                {% if data.logged %}
+                <li><a href="/products">Products</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/log-out">Log Out</a></li>
+                {% else %}
+                <li><a href="/sign-in">Sign In</a></li>
+                <li><a href="/sign-up">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% if data.logged %}
+        <div class="cart-container">
+            <a href="/carrito"><img src="static/images/carrito.png" alt="Cart" class="cart-icon"></a>
+        </div>
+        {% endif %}
+    </header>
+
+    {% block main %}
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h2>Heart<span>Bit</span></h2>
+                <p><img src="static/images/telefono.png" alt="Phone"> 910-123-456</p>
+                <p><img src="static/images/correo.png" alt="Email"> jondir.tools.official@gmail.com</p>
+            </div>
+            <div class="footer-links">
+                <h3>Pages</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    {% if data.logged %}
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/log-out">Log Out</a></li>
+                    {% else %}
+                    <li><a href="/sign-in">Sign In</a></li>
+                    <li><a href="/sign-up">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Social</h3>
+                <a href="#"><img src="static/images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="static/images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="static/images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+
+    <!-- Chat Popup -->
+    <div id="chat-popup" class="chat-popup">
+        <button onclick="redirectToChat()" class="chat-button">
+            <img src="static/images/chatbot.png" alt="Chatbot" class="chatbot-icon">
+        </button>
+    </div>
+
+    <script>
+        function redirectToChat() {
+            window.location.href = "/chatbot"; 
+        }
+    </script>
+</body>
+</html>

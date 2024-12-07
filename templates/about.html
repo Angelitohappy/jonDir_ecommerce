@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>
+    About Us
+</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="./static/styles/about.css">
+{% endblock %}
+
+{% block main %}
+
+<body>
+    <section class="header-section">
+        <div class="welcome-box hidden">
+            <h1>About Us</h1>
+            <p>Welcome to Jondir, where the future</p>
+            <p>of smart agriculture is already a reality.</p>
+        </div>
+    </section>
+
+    <div class="carta1 hidden">
+    <div class="container1">
+        <div class="content-box">
+                    <p>We are dedicated to transforming the lives of farmers through advanced <strong>agricultural robots</strong>, designed to simplify tasks, increase productivity, and provide higher quality.</p>
+                </div>
+                <div class="image-container" id="imagen1">
+                </div> 
+    </div>    
+    </div>
+    
+    <div class="carta2 hidden">
+        <div class="container2">
+                <div class="image-container" id="imagen2">
+                </div>
+                <div class="content-box">
+                    <p>Our goal is to <strong>inspire</strong> a positive change in the way people interact with their environment, developing robots that not only perform tasks but also enhance the <strong>quality of work</strong>, freeing up time and reducing effort.</p>
+                </div> 
+            </div>
+    </div>
+    
+
+    <div class="contenedor-principal">
+        <div class="contenedor hidden" id="contenedor-1">
+            <img src="static/images/img1.png" alt="Free Time" class="icono">
+            <p>Forget about tedious agricultural tasks. Our robots take care of cleaning, security, and more, giving you <strong>free time</strong> to enjoy what you love most.</p>
+        </div>
+        <div class="contenedor hidden" id="contenedor-2">
+            <img src="static/images/img2.png" alt="Comfort" class="icono">
+            <p>With remote control and custom programming, you can manage your robots conveniently from anywhere to ensure your <strong>comfort</strong>.</p>
+        </div>
+        <div class="contenedor hidden" id="contenedor-3">
+            <img src="static/images/img3.png" alt="Ease of Use" class="icono">
+            <p>Our robots are designed to offer <strong>security</strong> and <strong>ease</strong> of use, adapting to various needs.</p>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            });
+    
+            // Select the elements you want to animate
+            const elements = document.querySelectorAll(".welcome-box, .carta1, .carta2, .contenedor");
+            elements.forEach(el => el.classList.add("hidden")); // Add 'hidden' class for initial state
+            elements.forEach(el => observer.observe(el)); // Observe each element
+        });
+    </script>
+    
+        
+</body>
+{% endblock %} 

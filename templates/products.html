@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>
+    Products
+</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="./static/styles/products.css">
+{% endblock %}
+
+
+{% block main %}
+
+<body>
+
+    <!-- Search and Filter Form -->
+    <div class="search-card">
+        <h2>Products</h2>
+        <form method="GET" action="/category">
+            <input type="text" name="search" placeholder="Search by name"
+                value="{{ request.args.get('search', '') }}">
+            <label for="category">Category:</label>
+            <select name="category" id="category">
+                <option value="">--Select--</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Security">Security and Surveillance</option>
+                <option value="Assistant">Personal Assistant</option>
+                <option value="Gardening">Gardening</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+        {% if data.search_error %}
+        <p class="error-message">
+            Please fill in at least one of the fields.
+        </p>
+        {% elif data.search_empty %}
+        <p class="error-message">
+            No results found for your search.
+        </p>
+        {% endif %}
+    </div>
+
+    <!-- Product List -->
+    <div class="card">
+        <div class="product-grid">
+                {% for producto in data.resultado %}
+                <form action="/detailed-product">
+                    <input name="id" type="hidden" value="{{ producto.id }}">
+                    <button class="product-card" type="submit">
+                        <img src="{{ url_for('static', filename='images/product_' + producto['id']|string + '.png') }}" alt="Product Image">
+                        <h3>{{ producto.name }}</h3>
+                        <p>Category: {{ producto.category }}</p>
+                        <p>Price: ${{ producto.price }}</p>
+                    </button>
+                </form>
+                {% endfor %}
+            </div>
+     </div>
+    
+</body>
+{% endblock %}

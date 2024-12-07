@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>
+    Product Details
+</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="./static/styles/product.css">
+{% endblock %}
+
+{% block main %}
+<body>
+    <div class="product-detail-container">
+        <!-- Product Image -->
+        <div class="product-image">
+            <img src="{{ data.producto.imagen }}" alt="{{ data.producto.name }}">
+        </div>
+        
+        <!-- Product Details -->
+        <div class="product-info">
+            <h2>{{ data.producto.name }}</h2>
+            <p><strong>Category:</strong> {{ data.producto.category }}</p>
+            <p><strong>Description:</strong> {{ data.producto.description | default('No description available') }}</p>
+            <p><strong>Price:</strong> ${{ data.producto.price }}</p>
+            <p><strong>Available Quantity:</strong> {{ data.producto.quantity }}</p>
+            <p><strong>Availability:</strong> {% if data.producto.is_available %}Available{% else %}Not available{% endif %}</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <a href="/products" class="back-to-catalog">Back to Catalog</a>
+        </div>
+    </div>
+</body>
+{% endblock %}

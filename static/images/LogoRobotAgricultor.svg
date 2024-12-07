@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 200"
+  width="200"
+  height="200">
+  <circle cx="100" cy="100" r="90" fill="#A8D5BA" />
+  <rect x="70" y="50" width="60" height="80" fill="#6B9A6A" />
+  <circle cx="85" cy="70" r="10" fill="#FFF" />
+  <circle cx="115" cy="70" r="10" fill="#FFF" />
+  <rect x="80" y="130" width="40" height="10" fill="#4B7F4D" />
+  <path d="M 100 130 Q 90 140 80 130" fill="#4B7F4D" />
+  <path d="M 100 130 Q 110 140 120 130" fill="#4B7F4D" />
+  
+  <!-- Cachos de venado -->
+  <path d="M 70 40 Q 50 20 60 50 Q 70 30 70 40" fill="#8B4513" />
+  <path d="M 130 40 Q 150 20 140 50 Q 130 30 130 40" fill="#8B4513" />
+</svg>
